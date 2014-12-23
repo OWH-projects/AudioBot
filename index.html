@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <!-- Bootstrap base layer -->
+    <link href="http://dataomaha.com/media/scripts/bootstrap/3.2.0/css/bootstrap.css" rel="stylesheet">
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/miniplayer.css" title="style"  media="screen"/>
+    
+    <title>...</title>
+    
+    <style>
+    h2 { font-weight:bold; }
+    h3 { margin-top:30px;}
+    #reload { margin-top:15px; }
+    .swatch { width:24px; height:12px; margin-top:4px; border-radius:2px; -webkit-border-radius:2px; -moz-border-radius:2px; }
+    .itemblue {background: #0099ff;}
+    .itemgreen {background: #339900;}
+    .itemred {background: #990000;}
+    .itemorange {background: #ff9900;}
+    .itemblack {background: #333;}
+    .itemgray {background: #ccc;}
+    </style>
+    
+</head>
+
+<body>
+	<div class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/tools">Newsroom tools</a>
+        </div>
+		<a class="navbar-right"><img class="logo" src="http://dataomaha.com/media/logo-owh-black.png" style="width: 150px; padding: 15px 0;"></a>
+      </div>
+    </div>
+
+
+
+	<div class="container">
+	
+<div class="col-md-12">
+    <div class="row">
+        <h1><i class="fa fa-headphones"></i>&emsp;Audio player</h1>
+        <p class="lead">Need an audio player with your story? Start here.</p>
+        <hr>
+    </div>
+    
+        <div class="row">    
+        <div class="col-md-5">
+    <h2>Upload</h2>
+    <div class="well">
+    
+  <form action="" role="form">  
+    
+    <h3 style="margin-top:0;">Select file to upload</h3>
+  <div class="form-group">
+    <input type="file" id="audioup">
+    <p class="help-block">MP3, OGG or WAV</p>
+    </div>
+
+    <h3>Title</h3>
+    
+    <input class="form-control" type="text" id="title" placeholder="Ex. Profane Bo Pelini Rant, 12/2" />
+    
+    <h3>Story slug</h3>
+    
+    <input class="form-control" type="text" id="slug" placeholder="Ex. 16_EXAMPLE" />
+    
+    
+  <h3>Audio player color</h3>
+  <label class="radio-inline">
+    <input type="radio" name="rads" id="blue" value="#0099ff" checked>
+    <div class="swatch itemblue"></div>
+  </label>
+
+  <label class="radio-inline">
+    <input type="radio" name="rads" id="red" value="#990000">
+    <div class="swatch itemred"></div>
+  </label>
+
+<label class="radio-inline">
+    <input type="radio" name="rads" id="green" value="#339900">
+    <div class="swatch itemgreen"></div>
+  </label>
+
+  <label class="radio-inline">
+    <input type="radio" name="rads" id="orange" value="#ff9900">
+    <div class="swatch itemorange"></div>
+  </label>
+
+  <label class="radio-inline">
+    <input type="radio" name="rads" id="black" value="#333">
+    <div class="swatch itemblack"></div>
+  </label>
+
+  <label class="radio-inline">
+    <input type="radio" name="rads" id="gray" value="#ccc">
+    <div class="swatch itemgray"></div>
+  </label>
+
+<h3>Show volume level?</h3>
+<div class="radio">
+  <label>
+    <input type="radio" name="volume" id="volyes" value="true" checked>
+    Yes
+  </label>
+</div>
+
+<div class="radio">
+  <label>
+    <input type="radio" name="volume" id="volno" value="false">
+    No
+  </label>
+</div>
+
+<h3>Show rewind option?</h3>
+<div class="radio">
+  <label>
+    <input type="radio" name="rewind" id="rewyes" value="true" checked>
+    Yes
+  </label>
+</div>
+
+<div class="radio">
+  <label>
+    <input type="radio" name="rewind" id="rewno" value="false">
+    No
+  </label>
+</div>
+
+<h3>Show time remaining?</h3>
+<div class="radio">
+  <label>
+    <input type="radio" name="time" id="timeyes" value="true" checked>
+    Yes
+  </label>
+</div>
+
+<div class="radio">
+  <label>
+    <input type="radio" name="time" id="timeno" value="false">
+    No
+  </label>
+</div>
+
+<h3>Add a download link?</h3>
+<div class="radio">
+  <label>
+    <input type="radio" name="dl" id="dlyes" value="true" checked>
+    Yes
+  </label>
+</div>
+
+<div class="radio">
+  <label>
+    <input type="radio" name="dl" id="dlno" value="false">
+    No
+  </label>
+</div>
+
+<input type="submit" class="btn btn-default btn-block" value="Submit" style="margin-top:30px;" />
+    
+  </form>
+  </div><!--//well-->
+  
+  </div><!--//col-md-5-->
+  
+  <div class="col-md-5 col-md-offset-1">
+    <h2>Preview</h2>
+    <p class="help-block">(Note: This preview player will play "King Kong Kitchie Kitchie Ki-Me-Oh" regardless of the file you're uploading for reasons that are too boring to talk about -- mostly you're just checking out how it looks here)</p>
+  <div id="preview">
+    <a class="audio {skin:'blue', autoPlay:false, inLine:false, showVolumeLevel:true, showRew:true, width: '100%', showTime:true, addShadow:false, downloadable:true}" href="https://dl-web.dropbox.com/get/Public/1-08%20King%20Kong%20Kitchie%20Kitchie%20Ki-Me.mp3?_subject_uid=38884522&w=AAB5Mr_fSolYjUwtoW3eotZ2H5MnicNWWL6nAHWQQ8fl9A">King Kong Kitchie Kitchie Ki-Me-Oh</a>
+  </div>
+
+  
+           <button type="button" class="btn btn-default btn-block" id="reload" onclick="updatePreview()">Update preview</button>  
+  
+  </div>
+  
+  </div><!--//row-->
+  
+  
+  </div><!--//col-md-12-->
+
+</div><!--//container-->
+  
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://www.dataomaha.com/media/scripts/jplayer/mini/js/jquery.jplayer.min.js"></script>
+<script type="text/javascript" src="http://www.dataomaha.com/media/scripts/jplayer/mini/js/jquery.mb.miniPlayer.js"></script>
+
+<script>
+$(function(){ $(".audio").mb_miniPlayer(); });
+
+function updatePreview() {
+    var color = $("input[name=rads]:checked").attr('id');
+    var vol = $("input[name=volume]:checked").val();
+    var rew = $("input[name=rewind]:checked").val();
+    var showtime = $("input[name=time]:checked").val();
+    var dl = $("input[name=dl]:checked").val();
+    var words = $("#title").val();
+    
+    var prev = '<a class="audio {skin:\'' + color + '\', autoPlay:false, inLine:false, showVolumeLevel:' + vol + ', showRew:' + rew + ', width: \'100%\', showTime:' + showtime + ', addShadow:false, downloadable:' + dl + '}" href="kkkkkmo.mp3">' + words + '</a>'
+
+    $('#preview').html('').html(prev);
+    
+    $(function(){ $(".audio").mb_miniPlayer(); });
+    
+}
+
+</script>
+
+</body>
+</html>
